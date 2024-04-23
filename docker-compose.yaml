@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  container:
+    image: kanjurer/csci4145-chatapp:latest
+    container_name: chatapp-prod
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    networks:
+      - chatapp_network
+
+networks:
+  chatapp_network:
+    driver: bridge
